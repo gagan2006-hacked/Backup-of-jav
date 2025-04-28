@@ -1,7 +1,7 @@
 import java.util.Arrays;
 public class Queens {
     public static void main(String[] args) {
-        boolean[][]board=new boolean[4][3];
+        boolean[][]board=new boolean[4][4];
         placeQueens(board,0);
     }
     public static void placeQueens(boolean[][]board,int row){
