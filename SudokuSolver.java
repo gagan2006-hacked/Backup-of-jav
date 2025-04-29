@@ -1,3 +1,5 @@
+package Videos.COD_ASSIGN;
+
 import java.util.Arrays;
 
 public class SudokuSolver {
@@ -64,8 +66,8 @@ public class SudokuSolver {
         if (numAlreadyPresentInRow(board,row,num)&&numAlreadyPresentInCol(board,col,num)){
             return false;
         }
-        if (!numAlreadyPresentInRow(board, row, num)) {
-            return !numAlreadyPresentInCol(board,col,num);
+        if (gridCorrect(board,row-row%3,col-col%3,num)){
+            return false;
         }
         return true;
     }
@@ -88,6 +90,17 @@ public class SudokuSolver {
             if (board[row][i]==num){
                 return true;
             }
+        }
+        return false;
+    }
+    public static boolean gridCorrect(int[][]board,int r,int c,int num){
+        for (int i =r; i <r+3; i++) {
+            for (int j =c; j <c+3;j++) {
+                if (board[i][j]==num){
+                    return true;
+                }
+            }
+
         }
         return false;
     }
