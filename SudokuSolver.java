@@ -63,7 +63,7 @@ public class SudokuSolver {
         }
     }
     public static boolean isSafeToKeep(int[][]board,int row,int col,int num){
-        if (numAlreadyPresentInRow(board,row,num)&&numAlreadyPresentInCol(board,col,num)){
+        if (numAlreadyPresentInRow(board,row,num) || numAlreadyPresentInCol(board,col,num)){
             return false;
         }
         if (gridCorrect(board,row-row%3,col-col%3,num)){
