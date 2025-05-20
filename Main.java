@@ -1,19 +1,20 @@
-
-import java.util.Scanner;
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    private static System system ;
-
     public static void main(String[] args) {
-        Scanner sc=new Scanner(system.in);
-        System.out.println("enter the monthly salary");
-        int sl= sc.nextInt();
-        if (sl>=10000){
-            sl = sl +2000;
-        }else {
-            sl =sl +1000;
-
-        }
-        System.out.print("ur total salary is ");
-        System.out.print(sl);
+       Queens g=new gg();
+        g.hi();
+        System.out.println(g.getClass());
+    }
+}
+class gg extends Queens{
+    gg(){
+//        System.out.println("hi");
+    }
+    public void hi (){
+        System.out.println("hi in gg");
+    }
+    public void hello(){
+        System.out.println("hello");
     }
 }

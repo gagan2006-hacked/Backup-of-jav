@@ -1,11 +1,8 @@
-package com.Package_assignment;
-//import java.util.Arrays;
+import java.util.Arrays;
 public class Queens {
     public static void main(String[] args) {
-        boolean[][]board=new boolean[4][4];
+        boolean[][]board=new boolean[4][3];
         placeQueens(board,0);
-        System.out.println( placeQueen(board,0));
-
     }
     public static void placeQueens(boolean[][]board,int row){
         if (row==board.length){
@@ -72,25 +69,8 @@ public class Queens {
             System.out.println();
         }
     }
-
-    public static int placeQueen(boolean[][]board,int row){
-        if (row==board.length){
-/*            display(board);
-            System.out.println();*/
-            return 1;
-        }
-        int count =0;
-        for (int col = 0; col <board.length; col++) {
-            if (!isSafeToplace(board,row,col)){
-                continue;
-            }
-            if (!board[row][col]){
-                board[row][col]=true;
-                count+=placeQueen(board,row+1);
-                board[row][col]=false;
-            }
-        }
-return count;
+    public void hi(){
+        System.out.println("hi");
     }
 
 
