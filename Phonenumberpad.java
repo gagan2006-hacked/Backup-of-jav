@@ -21,7 +21,7 @@ class Phonenumberpad {
         }
         else if (numberInFirst>7){
             start+=1;
-            end=(numberInFirst>8)? end:end+1;
+            end=(numberInFirst>8)? end+2:end+1;
         }
         for (int i = start; i < end; i++) {
             char toAdd=(char)(A+i);
