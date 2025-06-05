@@ -16,6 +16,7 @@ class  Leetcode1482{
         int trueCount=0;
         int ans=-1;
         boolean b=false;
+        if (ar.length>=(m*k)){
         while (min<=max){
             int mid=(max+min)/2;
             if ((min==mid)&&mid==max){
@@ -44,7 +45,7 @@ class  Leetcode1482{
                 min=mid+1;
                 trueCount=0;
             }
-        }
+        }}
         return ans;
     }
 
