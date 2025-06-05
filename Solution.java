@@ -1,50 +1,35 @@
+package Leetcod;
+
 import java.util.ArrayList;
+import java.util.List;
 
-public class Solution {
+class Solution {
+    static List<String> ans;
+    public static void  solve(StringBuilder str, int count, int n) {
+        if (n == 0) {
+            ans.add(str.toString());
+            return;
+        }
+
+        if (count != n) {
+            str.append("(");
+            solve(str, count+1, n);
+            str.setLength(str.length() - 1);
+        }
+
+        if (count != 0) {
+            str.append(")");
+            solve(str, count-1, n-1);
+            str.setLength(str.length() - 1);
+        }
+    }
+    public static List<String> generateParenthesis(int n) {
+        ans = new ArrayList<>();
+        solve(new StringBuilder(), 0, n);
+        return ans;
+    }
+
     public static void main(String[] args) {
-        combination(4,2);
-    }
-    public static void  combination(int n,int k){
-//        StringBuilder stringBuilder= new StringBuilder();
-//        combinationHelper(stringBuilder,n,k);
-        ArrayList<Integer> list= new ArrayList<>(k);
-        combinationArrayList(list,n,k);
-    }
-
-    private static void combinationArrayList(ArrayList<Integer> list, int n, int k) {
-        if (k==0){
-            System.out.println(list);
-            return;
-        }
-        for (int i = (list.isEmpty()?1:list.getLast()); i <=n ; i++) {
-            if (list.isEmpty()){
-                list.add(i);
-                combinationArrayList(list,n,k-1);
-                list.removeLast();
-            }
-            else if (list.getLast()<i){
-                list.add(i);
-                combinationArrayList(list,n,k-1);
-                list.removeLast();
-            }
-        }
-    }
-
-    private static void combinationHelper(StringBuilder value, int n, int k) {
-        if (k==0){
-            System.out.println(value);
-            return;
-        }
-        for (int i=(value.isEmpty())? 1:value.charAt(value.length()-1)-'0';i<=n;i++){
-            if (value.isEmpty()){
-                value.append(i);
-                combinationHelper(value,n,k-1);
-                value.deleteCharAt(value.length()-1);
-            }else if ((value.charAt(value.length()-1)-'0')<i){
-                value.append(i);
-                combinationHelper(value,n,k-1);
-                value.deleteCharAt(value.length()-1);
-            }
-        }
+        System.out.println(generateParenthesis(3));
     }
 }
