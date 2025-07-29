@@ -1,0 +1,9 @@
+User types → Characters (e.g., 'i')  
+↓  
+OS encodes them → Bytes (e.g., 105)  
+↓  
+Java reads bytes using System.in  
+↓  
+InputStreamReader decodes bytes → Characters  
+↓  
+BufferedReader reads characters as strings
